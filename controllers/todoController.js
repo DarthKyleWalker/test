@@ -18,6 +18,7 @@ module.exports = (app)=>{
     app.get('/todo', (req,res)=>{
         //get data from mongodb and pass it to view
         Todo.find({}, (err, data)=>{
+            
             if (err) throw err;
             res.render('todo', {todos: data});
         });
