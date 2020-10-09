@@ -16,10 +16,14 @@
         <div class="logo"><img src="/static/logo.png" alt=""></div>
     </div>
     <div id="todo-table">
-        <form action="">
-            <input type="text" name="item" placeholder="Add new item..." required>
-            <button type="submit">Add</button>
-        </form>
+        <% if (todos.length > 0) { %>
+            <h1>Větší než</h1>
+        <% } else { %>
+            <form action="">
+                <input type="text" name="item" placeholder="Add new item..." required>
+                <button type="submit">Add</button>
+            </form>
+        <% }; %>
         <ul>
             <% for (var i = 0; i < todos.length; i++) { %>
                 <li>
