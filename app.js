@@ -4,11 +4,13 @@ const todoController = require('./controllers/todoController');
 const app = express();
 const port = process.env.PORT || 3000;
 
+const publicDirectoryPath = path.join(__dirname, '/static');
+
 //set up template engine
 app.set('view engine', 'ejs');
 
 //static files
-app.use('/static', express.static('./static'));
+app.use(express.static(publicDirectoryPath));
 
 //fire controllers
 todoController(app);
